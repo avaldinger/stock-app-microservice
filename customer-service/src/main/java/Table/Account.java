@@ -71,14 +71,6 @@ public class Account {
 		return "Accounts id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", ownerType=" + ownerType;
 	}
 
-	public List<Portfolios> getPortfolios() {
-		return portfolios;
-	}
-
-	public void setPortfolios(List<Portfolios> portfolios) {
-		this.portfolios = portfolios;
-	}
-
 	public List<AccountBalances> getAccountBalances() {
 		return accountBalances;
 	}
@@ -87,37 +79,7 @@ public class Account {
 		this.accountBalances = accountBalances;
 	}
 
-	public List<Orders> getOrders() {
-		return orders;
-	}
 
-	public void setOrders(List<Orders> orders) {
-		this.orders = orders;
-	}
-
-	// convenience method to add portfolios
-	public void addPortfolio(Portfolios tempPortfolio) {
-
-		if (portfolios == null) {
-			portfolios = new ArrayList<>();
-		}
-
-		portfolios.add(tempPortfolio);
-
-		tempPortfolio.setAccounts(this);
-	}
-
-	// convenience method to add portfolios
-	public void addOrders(Orders tempOrders) {
-
-		if (orders == null) {
-			orders = new ArrayList<>();
-		}
-
-		orders.add(tempOrders);
-
-		tempOrders.setAccounts(this);
-	}
 
 	// convenience method to add portfolios
 	public void addAccountBalance(AccountBalances tempAccountBalance) {

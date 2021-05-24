@@ -1,0 +1,13 @@
+# Application info
+spring.application.name=customer-service
+server.port=8081
+
+# DB Connection info
+spring.jpa.hibernate.ddl-auto=none
+
+# connection to the database
+spring.datasource.url = jdbc:mysql://localhost:3306/<DATABASENAME>?useSSL=false&serverTimezone=UTC&characterEncoding=latin1
+spring.datasource.username = FILL ME
+spring.datasource.password = FILL ME
+spring.jpa.show-sql=true
+

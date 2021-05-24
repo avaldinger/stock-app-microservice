@@ -1,4 +1,4 @@
-package Table;
+package com.avaldinger.customer.customerservice.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -19,11 +19,6 @@ public class Account {
 	private String lastName;
 	@Column(name = "owner_type")
 	private String ownerType;
-
-
-	@OneToMany(mappedBy = "accounts", cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
-	private List<AccountBalances> accountBalances;
-
 
 	public Account() {
 	}
@@ -71,26 +66,5 @@ public class Account {
 		return "Accounts id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", ownerType=" + ownerType;
 	}
 
-	public List<AccountBalances> getAccountBalances() {
-		return accountBalances;
-	}
-
-	public void setAccountBalances(List<AccountBalances> accountBalances) {
-		this.accountBalances = accountBalances;
-	}
-
-
-
-	// convenience method to add portfolios
-	public void addAccountBalance(AccountBalances tempAccountBalance) {
-
-		if (accountBalances == null) {
-			accountBalances = new ArrayList<>();
-		}
-
-		accountBalances.add(tempAccountBalance);
-
-		tempAccountBalance.setAccounts(this);
-	}
 
 }

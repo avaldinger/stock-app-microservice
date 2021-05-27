@@ -5,7 +5,7 @@ import java.util.Currency;
 
 @Entity
 @Table(name="tickers")
-public class Tickers {
+public class Ticker {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -25,9 +25,9 @@ public class Tickers {
 	@Column(name="total_amount_stock")
 	private int totalAmount;
 	
-	public Tickers() {}
+	public Ticker() {}
 
-	public Tickers(String tickerId, String name, Currency currency, String type, double actualPrice, int totalAmount) {
+	public Ticker(String tickerId, String name, Currency currency, String type, double actualPrice, int totalAmount) {
 		this.tickerId = tickerId;
 		this.name = name;
 		this.currency = currency;

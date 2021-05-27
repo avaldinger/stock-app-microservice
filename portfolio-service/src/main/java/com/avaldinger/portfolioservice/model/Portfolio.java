@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="portfolios")
-public class Portfolios {
+public class Portfolio {
 	
 	
 	@Id
@@ -23,9 +23,9 @@ public class Portfolios {
 	
 	
 	
-	public Portfolios() {}
+	public Portfolio() {}
 
-	public Portfolios(String ticker, int amount, int accountId) {
+	public Portfolio(String ticker, int amount, int accountId) {
 		this.ticker = ticker;
 		this.amount = amount;
 		this.accountId = accountId;

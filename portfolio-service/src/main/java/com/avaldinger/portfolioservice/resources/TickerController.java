@@ -39,7 +39,7 @@ public class TickerController {
     }
 
     @PostMapping("/add")
-    public String addPortfolio(@RequestBody Ticker ticker) {
+    public String addTicker(@RequestBody Ticker ticker) {
 
         tickerRepository.save(ticker);
 
@@ -48,7 +48,7 @@ public class TickerController {
     }
 
     @PutMapping("/update/")
-    public Ticker updatePortfolio(@RequestBody Ticker ticker) {
+    public Ticker updateTicker(@RequestBody Ticker ticker) {
 
         Ticker existingTicker = tickerRepository.getById(ticker.getId());
 
@@ -65,15 +65,15 @@ public class TickerController {
         return existingTicker;
     }
 
-    @DeleteMapping("/delete/{tickerIdd}")
-    public String removePortfolio(@PathVariable int tickerIdd) {
+    @DeleteMapping("/delete/{tickerId}")
+    public String removeTicker(@PathVariable int tickerId) {
 
-        if (tickerRepository.findById(tickerIdd).isPresent()) {
-            Ticker toRemove = tickerRepository.findById(tickerIdd).orElse(null);
+        if (tickerRepository.findById(tickerId).isPresent()) {
+            Ticker toRemove = tickerRepository.findById(tickerId).orElse(null);
             tickerRepository.delete(toRemove);
-            return "Ticker with id: " + tickerIdd + " has been removed.";
+            return "Ticker with id: " + tickerId + " has been removed.";
         } else {
-            throw new EntityNotFoundException("Portfolio with id " + tickerIdd + " doesn't exists.");
+            throw new EntityNotFoundException("Portfolio with id " + tickerId + " doesn't exists.");
         }
     }
 

@@ -47,6 +47,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>pl.zankowski</groupId>
+			<artifactId>iextrading4j-all</artifactId>
+			<version>3.4.4</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
